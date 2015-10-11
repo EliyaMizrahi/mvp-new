@@ -10,13 +10,27 @@ import algorithms.search.Solution;
 import presenter.Command;
 import presenter.Properties;
 
+/**
+ * The AbstractViewObservable program implements View and inherits Observable.
+ * AbstractViewObservable consist from BufferedReader, PrintWriter and HashMap.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
+
 public abstract class AbstractViewObservable extends Observable implements View {
 	protected BufferedReader in;
 	protected PrintWriter out;
 	protected HashMap<String, Command> commandMap;
 	protected HashMap<Command, Object> hashObj;
 
-
+/**
+ * Constructor
+ * @param in
+ * @param out
+ */
 	public AbstractViewObservable(BufferedReader in, PrintWriter out) {
 		this.in = in;
 		this.out = out;

@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  * The Dir program implements an application that realize the methods from CommonCommand.
- * This method display whole files and folders in some path.
+ * This class display whole files and folders in some path.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

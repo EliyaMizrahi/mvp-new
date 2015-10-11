@@ -3,12 +3,26 @@ package guiView;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * The BasicWindow program implements Runnable. The class is responsible to open a basic window.
+ * BasicWindow consist from display and shell.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 public abstract class BasicWindow implements Runnable {
 	
 	protected Display display;
 	protected Shell shell;
 	
-
+/**
+ * Constructor
+ * @param title
+ * @param width
+ * @param height
+ */
 	public BasicWindow(String title, int width, int height) {
 		display = new Display();
 		shell = new Shell(display);

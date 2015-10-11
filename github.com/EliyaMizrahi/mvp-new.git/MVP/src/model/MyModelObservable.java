@@ -31,6 +31,16 @@ import algorithms.search.Solution;
 import io.MyCompressorOutputStream;
 import io.MyDecompressorInputStream;
 
+/**
+ * The MyModelObservable program implements an application that realize the methods from
+ * AbstractModelObservable.
+ * MyModelObservable consist from HashMap.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 public class MyModelObservable extends AbstractModelObservable {
 
 	private HashMap<Maze3d, Solution<Position>> mazeSolutionMap;
@@ -55,9 +65,6 @@ public class MyModelObservable extends AbstractModelObservable {
 	/**
 	 * This method is used to create maze3d by Recursive Backtracker algorithm.
 	 * @param nameMaze
-	 * @param y
-	 * @param x
-	 * @param z
 	 */
 	@Override
 	public void generate(String nameMaze) {
@@ -86,8 +93,8 @@ public class MyModelObservable extends AbstractModelObservable {
 
 	
 	/**
-	 * This method is used to display maze3d.
-	 * @param nameMaze
+	 * This method is used to get the maze3d.
+	 * @param Maze3d
 	 */
 	@Override
 	public Maze3d getMaze3d(String nameMaze) {
@@ -232,7 +239,6 @@ public class MyModelObservable extends AbstractModelObservable {
 	/**
 	 * This method is use to solve the maze by some algorithm.
 	 * @param nameMaze
-	 * @param nameAlgorithms
 	 */
 	@Override
 	public void solveMaze(String nameMaze) {
@@ -289,6 +295,11 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to get maze solution 
+	 * @param nameMaze
+	 * @return solution
+	 */
 	@Override
 	public Solution<Position> getMazeSolution(String nameMaze) {
 		String name= properties.getNameMaze();
@@ -302,6 +313,9 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to save the maze details to zip file
+	 */
 	@Override
 	public void saveToZip() {
 		try {
@@ -320,6 +334,9 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to load the maze details from zip file
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public void loadFromZip() {
@@ -358,22 +375,42 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to get the maze solution from the HashMap
+	 * @return HashMap
+	 */
 	public HashMap<Maze3d, Solution<Position>> getMazeSolutionMap() {
 		return mazeSolutionMap;
 	}
 
+	/**
+	 * This method is used to set the maze solution of the HashMap
+	 * @param mazeSolutionMap
+	 */
 	public void setMazeSolutionMap(HashMap<Maze3d, Solution<Position>> mazeSolutionMap) {
 		this.mazeSolutionMap = mazeSolutionMap;
 	}
 
+	/**
+	 * This method is used to get the position from the HashMap
+	 * @return HashMap
+	 */
 	public HashMap<String, Position> getHashPosition() {
 		return hashPosition;
 	}
 
+	/**
+	 * This method is used to set the position of the HashMap
+	 * @param hashPosition
+	 */
 	public void setHashPosition(HashMap<String, Position> hashPosition) {
 		this.hashPosition = hashPosition;
 	}
 
+	/**
+	 * This method is used to update the position according to "up" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveUp() {
 		String nameMaze = properties.getNameMaze();
@@ -389,6 +426,10 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to update the position according to "down" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveDown() {
 		String nameMaze = properties.getNameMaze();
@@ -405,6 +446,10 @@ public class MyModelObservable extends AbstractModelObservable {
 
 	}
 
+	/**
+	 * This method is used to update the position according to "left" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveLeft() {
 		String nameMaze = properties.getNameMaze();
@@ -421,6 +466,10 @@ public class MyModelObservable extends AbstractModelObservable {
 
 	}
 
+	/**
+	 * This method is used to update the position according to "right" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveRight() {
 		String nameMaze = properties.getNameMaze();
@@ -437,6 +486,10 @@ public class MyModelObservable extends AbstractModelObservable {
 
 	}
 
+	/**
+	 * This method is used to update the position according to "backward" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveBackward() {
 		String nameMaze = properties.getNameMaze();
@@ -453,6 +506,10 @@ public class MyModelObservable extends AbstractModelObservable {
 
 	}
 
+	/**
+	 * This method is used to update the position according to "forward" command that receive
+	 * from the method getPossibleMoves
+	 */
 	@Override
 	public void moveForward() {
 		String nameMaze = properties.getNameMaze();
@@ -468,6 +525,11 @@ public class MyModelObservable extends AbstractModelObservable {
 		}
 	}
 
+	/**
+	 * This method is used to get specific position from the hash
+	 * @param nameMaze
+	 * @return Position
+	 */
 	@Override
 	public Position getPositionFromHash(String nameMaze) {
 		return hashPosition.get(nameMaze);

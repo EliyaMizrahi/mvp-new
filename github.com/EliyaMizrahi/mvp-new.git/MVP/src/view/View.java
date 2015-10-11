@@ -26,7 +26,5 @@ public interface View {
 	 public void displayPosition(Position position);
 	 public void exit();
 	 public void setProperties(Properties prop);
-	 
-	 
 
 }

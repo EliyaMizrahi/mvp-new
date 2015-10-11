@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The Exit program implements an application that realize the methods from CommonCommand.
- * This method apply the exit method close the project orderly.
+ * This class apply the exit method close the project orderly.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

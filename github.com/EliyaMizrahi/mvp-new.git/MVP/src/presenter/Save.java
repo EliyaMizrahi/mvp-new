@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The Save program implements an application that realize the methods from CommonCommand.
- * This method apply the saveMaze method that save the maze into a file.
+ * This class apply the saveMaze method that save the maze into a file.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

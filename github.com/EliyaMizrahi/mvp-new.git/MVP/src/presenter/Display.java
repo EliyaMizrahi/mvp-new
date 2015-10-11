@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The Display program implements an application that realize the methods from CommonCommand.
- * This method apply the relevant application according to command.
+ * This class apply the relevant application according to command.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

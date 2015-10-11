@@ -2,7 +2,7 @@ package presenter;
 
 /**
  * The Load program implements an application that realize the methods from CommonCommand.
- * This method apply the loadMaze method that load a maze from a file.
+ * This class apply the loadMaze method that load a maze from a file.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

@@ -17,18 +17,38 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Text;
 import presenter.Properties;
 
+/**
+ * The MessegeWindow program implements an application that inherits BasicWindowGui.
+ * The class is responsible to open a properties window of the maze.
+ * MessegeWindow consist from properties and okButton.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
+
 public class MessegeWindow extends BasicWindowGui {
 
 	protected Properties properties;
 	protected Button okButton;
 
+	/**
+	 * Constructor
+	 * @param title
+	 * @param width
+	 * @param height
+	 */
 	public MessegeWindow(String title, int width, int height) {
 		super(title, width, height);
 		properties = new Properties();
-		properties.defultProp();
+		properties.defaultProp();
 
 	}
 
+	/**
+	 * This method is used to insert widgets to the window.
+	 */
 	@Override
 	void initWidgets() {
 		shell.setLayout(new GridLayout(2, false));
@@ -120,7 +140,7 @@ public class MessegeWindow extends BasicWindowGui {
 					eXml.flush();
 					eXml.close();
 				} catch (FileNotFoundException e) {
-
+					e.printStackTrace();
 				}
 				shell.dispose();
 				
@@ -135,6 +155,10 @@ public class MessegeWindow extends BasicWindowGui {
 		
 	}
 	
+	/**
+	 * This method is used to display an error for the client when necessary.
+	 * @param messege
+	 */
 	public void messegeError(String messege) {
 		Display.getDefault().syncExec(new Runnable() {
 			

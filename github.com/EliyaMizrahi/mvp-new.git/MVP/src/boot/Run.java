@@ -17,6 +17,14 @@ import presenter.Properties;
 import view.AbstractViewObservable;
 import view.MyViewObservableCli;
 
+/**
+ * The Run program implements an application that contains the main method.
+ * The main method start the whole MVP project.
+ * @author Mor Mordoch & Eliya Mizrahi 
+ * @version 1.0
+ * @since 11-10-2015
+ */
+
 public class Run {
 	public static void main(String[] args) {
 
@@ -47,7 +55,7 @@ public class Run {
 				} catch (FileNotFoundException e) {
 					System.out.println("file not found, default properties will be loaded");
 					properties = new Properties();
-					properties.defultProp();
+					properties.defaultProp();
 				}
 				MyModelObservable model = new MyModelObservable();
 				//properties.defultProp();

@@ -9,9 +9,20 @@ import algorithms.search.Solution;
 import presenter.Command;
 import view.AbstractViewObservable;
 
+/**
+ * The AbstractViewObsevableGui program implements an application that inherits AbstractViewObservable.
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 public abstract class AbstractViewObsevableGui extends AbstractViewObservable {
 	
-	
+	/**
+	 * Constructor
+	 * @param in
+	 * @param out
+	 */
 	public AbstractViewObsevableGui(BufferedReader in, PrintWriter out) {
 		super(in, out);
 	}

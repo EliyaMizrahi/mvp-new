@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The FileSize program implements an application that realize the methods from CommonCommand.
- * This method apply the fileSize method that display the size of maze in the file.
+ * This class apply the fileSize method that display the size of maze in the file.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

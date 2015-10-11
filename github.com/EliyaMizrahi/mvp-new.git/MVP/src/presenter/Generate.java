@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The Generate program implements an application that realize the methods from CommonCommand.
- * This method apply the generate method that create maze3d by Recursive Backtracker algorithm
+ * This class apply the generate method that create maze3d by Recursive Backtracker algorithm
  * and check the command theat we get from the client.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  

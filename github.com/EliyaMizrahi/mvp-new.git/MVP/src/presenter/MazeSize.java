@@ -2,7 +2,7 @@ package presenter;
 
 /**
  * The MazeSize program implements an application that realize the methods from CommonCommand.
- * This method apply the mazeSize method that display the size of the maze in memory.
+ * This class apply the mazeSize method that display the size of the maze in memory.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

@@ -1,5 +1,14 @@
 package presenter;
 
+/**
+ * The Moves program implements an application that realize the methods from CommonCommand.
+ * This class apply the moves methods that update the position according to the command that
+ * receive from the method getPossibleMoves
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 10-10-2015
+ */
 public class Moves extends CommonCommand {
 
 	/**
@@ -40,36 +49,3 @@ public class Moves extends CommonCommand {
 		}
 	}
 
-
-
-
-
-//String[] tempArr = command.split(" ");
-//if (tempArr.length > 1) {
-//	switch (tempArr[0]) {
-//	case "up":
-//		presenter.getModel().moveUp(tempArr[1]);
-//		break;
-//	case "down":
-//		presenter.getModel().moveDown(tempArr[1]);
-//		break;
-//	case "left":
-//		presenter.getModel().moveLeft(tempArr[1]);
-//		break;
-//	case "right":
-//		presenter.getModel().moveRight(tempArr[1]);
-//		break;
-//	case "backward":
-//		presenter.getModel().moveBackward(tempArr[1]);
-//		break;
-//	case "forward":
-//		presenter.getModel().moveForward(tempArr[1]);
-//		break;
-//
-//	default:
-//		presenter.getView().display("Error");
-//		break;
-//	}
-//
-//}
-//}

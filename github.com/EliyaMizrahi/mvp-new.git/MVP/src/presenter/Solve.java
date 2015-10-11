@@ -1,7 +1,7 @@
 package presenter;
 /**
  * The Solve program implements an application that realize the methods from CommonCommand.
- * This method apply the solveMaze method that solve the maze by some algorithm.
+ * This class apply the solveMaze method that solve the maze by some algorithm.
  * 
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0

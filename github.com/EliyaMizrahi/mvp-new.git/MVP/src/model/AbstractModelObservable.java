@@ -10,7 +10,14 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import presenter.Properties;
 
-
+/**
+ * The AbstractModelObservable program implements Model and inherits Observable.
+ * AbstractModelObservable consist from HashMap, Properties and ExecutorService - threadPool.
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 public abstract class AbstractModelObservable extends Observable implements Model {
 
 	protected HashMap<String, Maze3d> hashMaze;
@@ -18,12 +25,15 @@ public abstract class AbstractModelObservable extends Observable implements Mode
 	protected Properties properties;
 	protected ExecutorService threadPool;
 
+	/**
+	 * Constructor
+	 */
 	public AbstractModelObservable() {
 		this.hashMaze = new HashMap<String, Maze3d>();
 		this.commandMap = new HashMap<String, Object>();
 		threadPool = Executors.newCachedThreadPool();
 		this.properties= new Properties();
-		properties.defultProp();
+		properties.defaultProp();
 	}
 
 	public abstract void generate(String nameMaze);
@@ -47,6 +57,11 @@ public abstract class AbstractModelObservable extends Observable implements Mode
 	
 	public abstract Position getPositionFromHash(String nameMaze);
 
+	/**
+	 * This method is used to set the notifyObservers with messege and object
+	 * @param command
+	 * @param obj
+	 */
 	protected void setNotifyObserversName(String command, Object obj) {
 		if (obj != null) {
 			commandMap.put(command, obj);
@@ -55,16 +70,28 @@ public abstract class AbstractModelObservable extends Observable implements Mode
 		notifyObservers(command);
 	}
 
+	/**
+	 * This method is used to get user command
+	 * @param command
+	 * @return Object
+	 */
 	@Override
 	public Object getUserCommand(String command) {
 		return commandMap.get(command);
 	}
 	
+	/**
+	 * This method is used to get the properties
+	 * @return properties
+	 */
 	public Properties getProperties() {
 		return properties;
 	}
 
-
+	/**
+	 * This method is used to set the properties
+	 * @param p
+	 */
 	public void setProperties(Properties p) {
 		this.properties = p;
 		ExecutorService thread = threadPool;

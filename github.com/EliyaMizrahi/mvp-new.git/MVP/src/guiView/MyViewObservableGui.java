@@ -21,16 +21,34 @@ import guiProperties.MessegeWindow;
 import presenter.Command;
 import presenter.Properties;
 
+/**
+ * The MyViewObservableGui program implements an application that inherits AbstractViewObsevableGui.
+ * MyViewObservableGui consist from MazeWindow and Properties
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 	protected MazeWindow mazeWindow;
 	protected Properties properties;
 
+	/**
+	 * Constructor
+	 * @param title
+	 * @param width
+	 * @param height
+	 * @param in
+	 * @param out
+	 */
 	public MyViewObservableGui(String title, int width, int height, BufferedReader in, PrintWriter out) {
 		super(in, out);
 		mazeWindow = new MazeWindow(title, width, height);
 		this.properties = new Properties();
-		properties.defultProp();
+		properties.defaultProp();
+		
+		//Sets the generateListener that responsible to generate the maze
 		mazeWindow.setGenerateListener(new SelectionListener() {
 
 			@Override
@@ -47,6 +65,7 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 			}
 		});
 
+		//Sets the solveListener that responsible to solve the maze
 		mazeWindow.setSolveListener(new SelectionListener() {
 
 			@Override
@@ -62,7 +81,8 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 			}
 		});
-
+		
+		//Sets the saveListener that responsible to save some maze
 		mazeWindow.setSaveListener(new SelectionListener() {
 
 			@Override
@@ -80,6 +100,7 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 			}
 		});
 
+		//Sets the loadListener that responsible to load some maze
 		mazeWindow.setLoadListener(new SelectionListener() {
 
 			@Override
@@ -102,6 +123,8 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 			}
 		});
+		
+		//Sets the exitListener that responsible to close program orderly
 		mazeWindow.setExitListener(new SelectionListener() {
 
 			@Override
@@ -115,7 +138,7 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 			}
 		});
-
+		//Sets the disposeExit 
 		mazeWindow.setDisposeExit(new DisposeListener() {
 
 			@Override
@@ -125,6 +148,8 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 			}
 		});
+		
+		//Sets the propertiesListener that responsible to update the game properties
 		mazeWindow.setPropertiesListener(new SelectionListener() {
 
 			@Override
@@ -152,7 +177,6 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 					}
 				}).start();
-
 			}
 
 			@Override
@@ -161,6 +185,8 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 			}
 		});
+		
+		//Sets the keyListener that responsible to the player movements
 		mazeWindow.setKeyListener(new KeyAdapter() {
 
 			@Override
@@ -203,12 +229,19 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 		});
 	}
 
+	/**
+	 * This method is used to start the game
+	 */
 	@Override
 	public void start() {
 		mazeWindow.run();
 
 	}
 
+	/**
+	 * This method is used to display the messegeBox
+	 * @param messege
+	 */
 	@Override
 	public void display(String message) {
 		mazeWindow.messegeBox(message);
@@ -225,18 +258,30 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 	}
 
+	/**
+	 * This method is used to display the maze
+	 * @param maze
+	 */
 	@Override
 	public void displayMaze(Maze3d maze) {
 		mazeWindow.setMyMaze(maze);
 
 	}
 
+	/**
+	 * This method is used to display the position
+	 * @param position
+	 */
 	@Override
 	public void displayPosition(Position position) {
 		mazeWindow.setCurrPosition(position);
 
 	}
 
+	/**
+	 * This method is used to display the solution
+	 * @param solution
+	 */
 	@Override
 	public void displaySolution(Solution<Position> solution) {
 		mazeWindow.setSolution(solution);
@@ -247,6 +292,10 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 
 	}
 
+	/**
+	 * This method is used to set the properties
+	 * @param prop
+	 */
 	@Override
 	public void setProperties(Properties prop) {
 		if (properties.getChooseView() != null)

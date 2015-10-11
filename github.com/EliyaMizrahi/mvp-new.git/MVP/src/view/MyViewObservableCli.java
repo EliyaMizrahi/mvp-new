@@ -12,16 +12,34 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import presenter.Command;
 import presenter.Properties;
+/**
+ * The MyViewObservableCli program implements an application that realize the methods from
+ * AbstractViewObservable. MyViewObservableCli consist from ExecutorService- threadPool.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
 
 public class MyViewObservableCli extends AbstractViewObservable {
 
 	private ExecutorService threadPool;
 
+	/**
+	 * Constructor
+	 * @param in
+	 * @param out
+	 */
 	public MyViewObservableCli(BufferedReader in, PrintWriter out) {
 		super(in, out);
 		this.threadPool = Executors.newCachedThreadPool();
 	}
 
+	/**
+	 * This method is use to begin the project. This method will run until we
+	 * get "exit"
+	 */
 	@Override
 	public void start() {
 		new Thread(new Runnable() {
@@ -55,6 +73,10 @@ public class MyViewObservableCli extends AbstractViewObservable {
 
 	}
 
+	/**
+	 * This method is use to display an array of Strings. 
+	 * @param string[]
+	 */
 	@Override
 	public void displayArr(String[] string) {
 		if (string != null) {
@@ -68,6 +90,10 @@ public class MyViewObservableCli extends AbstractViewObservable {
 		}
 	}
 
+	/**
+	 * This method is use to display string massage. 
+	 * @param massage
+	 */
 	@Override
 	public void display(String message) {
 		if (message != null) {
@@ -80,6 +106,10 @@ public class MyViewObservableCli extends AbstractViewObservable {
 	}
 
 
+	/**
+	 * This method is use to display the maze by cross section according to some index. 
+	 * @param maze2d[][]
+	 */
 	@Override
 	public void displayCrossSectionBy(int[][] maze2d) {
 		for (int i = 0; i < maze2d.length; i++) {
@@ -91,33 +121,56 @@ public class MyViewObservableCli extends AbstractViewObservable {
 		}
 	}
 
+	/**
+	 * This method is use to display the solution.
+	 * @param solution
+	 */
 	@Override
 	public void displaySolution(Solution<Position> solution) {
 		solution.printStack();
 	}
 
+	/**
+	 * This method is use to update the HashMap.
+	 * @param commandMap
+	 */
 	@Override
 	public void setCommand(HashMap<String, Command> commandMap) {
 		this.commandMap = commandMap;
 	}
 
+	/**
+	 * This method is use to display the maze.
+	 * @param maze
+	 */
 	@Override
 	public void displayMaze(Maze3d maze) {
 		maze.print();
 	}
 
+	/**
+	 * This method is use to display the position.
+	 * @param position
+	 */
 	@Override
 	public void displayPosition(Position position) {
 		out.println(position);
 		out.flush();
 	}
 	
+	/**
+	 * This method is use to close the project orderly.
+	 */
 	@Override
 	public void exit() {
 		out.println("Everything successfully closed");
 		out.flush();
 	}
 
+	/**
+	 * This method is used to set properties
+	 * @param prop
+	 */
 	@Override
 	public void setProperties(Properties prop) {
 		if (!prop.getChooseView().equals("Command line"))

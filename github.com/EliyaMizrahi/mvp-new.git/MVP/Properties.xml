@@ -8,22 +8,22 @@
    <char>y</char>
   </void>
   <void property="chooseView">
-   <string>CLI</string>
+   <string>GUI</string>
   </void>
   <void property="nameMaze">
-   <string>hj</string>
+   <string>mk</string>
   </void>
   <void property="numOfThread">
-   <int>2</int>
+   <int>7</int>
   </void>
   <void property="sizeX">
-   <int>2</int>
+   <int>7</int>
   </void>
   <void property="sizeY">
-   <int>2</int>
+   <int>7</int>
   </void>
   <void property="sizeZ">
-   <int>2</int>
+   <int>7</int>
   </void>
  </object>
 </java>

@@ -10,6 +10,21 @@ import org.eclipse.swt.widgets.Composite;
 
 import algorithms.mazeGenerators.Position;
 
+/**
+ * The Maze3d program implements an application that inherits MazeDisplayer.
+ * The class is responsible to the view of the maze in the play window.
+ * Maze3d consist from:
+ * 1. int if: index, pos1, pos2, goal1, goal2, goal3. 
+ * 2. char axis.
+ * 3. Image of: imagePlayer, imageWin, imageTrace, imageEnd, imageBackground, imageWall.
+ * 4. boolean bool
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch  
+ * @version 1.0
+ * @since 11-10-2015
+ *
+ */
+
 public class Maze3d extends MazeDisplayer {
 
 	protected int index;
@@ -19,6 +34,12 @@ public class Maze3d extends MazeDisplayer {
 	protected int goal1, goal2, goal3;
 	protected boolean bool;
 
+	/**
+	 * Constructor
+	 * @param parent
+	 * @param style
+	 * @param axis
+	 */
 	public Maze3d(Composite parent, int style, char axis) {
 		super(parent, style);
 		this.axis = axis;
