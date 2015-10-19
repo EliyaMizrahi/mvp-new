@@ -46,7 +46,7 @@ public class MyViewObservableGui extends AbstractViewObsevableGui {
 		super(in, out);
 		mazeWindow = new MazeWindow(title, width, height);
 		this.properties = new Properties();
-		properties.defaultProp();
+		//properties.defaultProp();
 		
 		//Sets the generateListener that responsible to generate the maze
 		mazeWindow.setGenerateListener(new SelectionListener() {

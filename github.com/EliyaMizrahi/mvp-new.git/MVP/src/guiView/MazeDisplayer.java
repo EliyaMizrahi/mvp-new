@@ -7,11 +7,11 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 
 /**
- * The MazeDisplayer program implements an application that inherits Canvas.
- * The class is responsible to call all the methods that connected to the view of the maze.
- * MazeDisplayer consist from Maze3d, Position and Solution.
+ * The MazeDisplayer program implements an application that inherits Canvas. The
+ * class is responsible to call all the methods that connected to the view of
+ * the maze. MazeDisplayer consist from Maze3d, Position and Solution.
  * 
- * @author Eliya Mizrahi & Mor Mordoch  
+ * @author Eliya Mizrahi & Mor Mordoch
  * @version 1.0
  * @since 11-10-2015
  *
@@ -24,6 +24,7 @@ public class MazeDisplayer extends Canvas {
 
 	/**
 	 * Constructor
+	 * 
 	 * @param parent
 	 * @param style
 	 */
@@ -34,72 +35,56 @@ public class MazeDisplayer extends Canvas {
 
 	/**
 	 * This method is used to get Maze3d
+	 * 
 	 * @return myMaze
 	 */
 	public Maze3d getMyMaze() {
 		return myMaze;
 	}
-	
+
 	/**
 	 * This method is used to set the Maze3d
+	 * 
 	 * @param maze
 	 */
 	public void setMyMaze(Maze3d maze) {
 		this.myMaze = maze;
-		getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-				redraw();
-			}
-		});
-
 	}
 
 	/**
 	 * This method is used to get the Position
+	 * 
 	 * @return currPosition
 	 */
 	public Position getCurrPosition() {
 		return currPosition;
 	}
-	
+
 	/**
 	 * This method is used to set the Position
+	 * 
 	 * @param Position
 	 */
 	public void setCurrentPosition(Position position) {
 		this.currPosition = position;
-		getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-				redraw();
-			}
-		});
-
 	}
-
 
 	/**
 	 * This method is used to get the Solution
+	 * 
 	 * @return solution
 	 */
 	public Solution<Position> getSolution() {
 		return solution;
 	}
 
-
 	/**
 	 * This method is used to set the Solution
+	 * 
 	 * @param solution
 	 */
 	public void setSolution(Solution<Position> solution) {
 		this.solution = solution;
-		getDisplay().syncExec(new Runnable() {
-			@Override
-			public void run() {
-				redraw();
-			}
-		});
 	}
 
 }

@@ -58,13 +58,13 @@ public class Run {
 					properties.defaultProp();
 				}
 				MyModelObservable model = new MyModelObservable();
-				//properties.defultProp();
+				//properties.defaultProp();
 				model.setProperties(properties);
 				AbstractViewObservable view = null;
 
 				switch (properties.getChooseView()) {
 				case "Gui":
-					view = new MyViewObservableGui("maze3d", 500, 300,
+					view = new MyViewObservableGui("maze3d", 800, 600,
 							new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out));
 					break;
 				case "Cli":
@@ -72,7 +72,7 @@ public class Run {
 							new PrintWriter(System.out));
 					break;
 				default:
-					view = new MyViewObservableGui("maze3d", 500, 300,
+					view = new MyViewObservableGui("maze3d", 800, 600,
 							new BufferedReader(new InputStreamReader(System.in)), new PrintWriter(System.out));
 					break;
 				}

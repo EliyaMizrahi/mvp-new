@@ -3,7 +3,7 @@ package presenter;
 import java.io.Serializable;
 
 /**
- * The Properties program implements Observer methods.
+ * The Properties program implements Serializable.
  * Properties consist from int, String and char.
  * @author Eliya Mizrahi & Mor Mordoch  
  * @version 1.0
@@ -41,10 +41,10 @@ public class Properties implements Serializable {
 		this.sizeX = 2;
 		this.sizeZ = 2;
 		this.numOfThread = 5;
-		this.algorithm = "BFS";
+		this.algorithm = "AirDistance";
 		this.typeOfMaze = "MyMaze3dGenerator";
 		this.nameMaze = "mymaze";
-		this.chooseView="Gui";
+		this.chooseView="Cli";
 		this.axis='y';
 	}
 

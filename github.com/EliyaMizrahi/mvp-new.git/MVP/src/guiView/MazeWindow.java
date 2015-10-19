@@ -18,12 +18,14 @@ import org.eclipse.swt.widgets.MessageBox;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
+
 /**
  * The MazeWindow program implements an application that inherits BasicWindow.
- * The class is responsible to open the game window.
- * MazeWindow consist from: Position, Maze3d, Solution<Position>, SelectionListener, DisposeListener,
- * 							KeyListener, ArrayList<MazeDisplayer>, Menu, MenuItem, Button, String.
- * @author Eliya Mizrahi & Mor Mordoch  
+ * The class is responsible to open the game window. MazeWindow consist from:
+ * Position, Maze3d, Solution<Position>, SelectionListener, DisposeListener,
+ * KeyListener, ArrayList<MazeDisplayer>, Menu, MenuItem, Button, String.
+ * 
+ * @author Eliya Mizrahi & Mor Mordoch
  * @version 1.0
  * @since 11-10-2015
  *
@@ -47,6 +49,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * Constructor
+	 * 
 	 * @param title
 	 * @param width
 	 * @param height
@@ -160,12 +163,23 @@ public class MazeWindow extends BasicWindow {
 			}
 			if (solution != null) {
 				widget.setSolution(solution);
+				
 			}
+			Display.getDefault().syncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					widget.redraw();
+				}
+			});
+			
 		}
+			
 	}
 
 	/**
-	 * This method is used to set the position of the player 
+	 * This method is used to set the position of the player
+	 * 
 	 * @param y
 	 * @param x
 	 * @param z
@@ -180,8 +194,10 @@ public class MazeWindow extends BasicWindow {
 			}
 		}
 	}
+
 	/**
 	 * This method is used to get the Position
+	 * 
 	 * @return Position
 	 */
 	public Position getCurrPosition() {
@@ -190,6 +206,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the Position
+	 * 
 	 * @param currPosition
 	 */
 	public void setCurrPosition(Position currPosition) {
@@ -199,6 +216,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the Maze
+	 * 
 	 * @return Maze3d
 	 */
 	public Maze3d getMyMaze() {
@@ -207,6 +225,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the Maze
+	 * 
 	 * @param myMaze
 	 */
 	public void setMyMaze(Maze3d myMaze) {
@@ -216,6 +235,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the Solution
+	 * 
 	 * @return Solution
 	 */
 	public Solution<Position> getSolution() {
@@ -224,6 +244,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the Solution
+	 * 
 	 * @param solution
 	 */
 	public void setSolution(Solution<Position> solution) {
@@ -231,15 +252,10 @@ public class MazeWindow extends BasicWindow {
 		updateWidgets();
 	}
 
-//	public void displaySolutionMaze(String solution) {
-//		MessageBox solutionMaze = new MessageBox(shell, SWT.ICON_INFORMATION);
-//		solutionMaze.setText("solution");
-//		solutionMaze.setMessage(solution);
-//		solutionMaze.open();
-//	}
 
 	/**
 	 * This method is used to display an error for the client when necessary.
+	 * 
 	 * @param string
 	 */
 	public void messegeBox(String string) {
@@ -258,6 +274,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the generateListener
+	 * 
 	 * @param generateListener
 	 */
 	public void setGenerateListener(SelectionListener generateListener) {
@@ -266,29 +283,34 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the generateListener
+	 * 
 	 * @return generateListener
 	 */
 	public SelectionListener getGenerateListener() {
 		return generateListener;
 	}
-	
+
 	/**
 	 * This method is used to set the solveListener
+	 * 
 	 * @param solveListener
 	 */
 	public void setSolveListener(SelectionListener solveListener) {
 		this.solveListener = solveListener;
 	}
+
 	/**
 	 * This method is used to get the solveListener
+	 * 
 	 * @return solveListener
 	 */
 	public SelectionListener getSolveListener() {
 		return solveListener;
 	}
-	
+
 	/**
 	 * This method is used to get the disposeExit
+	 * 
 	 * @return disposeExit
 	 */
 	public DisposeListener getDisposeExit() {
@@ -297,6 +319,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the disposeExit
+	 * 
 	 * @param disposeExit
 	 */
 	public void setDisposeExit(DisposeListener disposeExit) {
@@ -305,7 +328,8 @@ public class MazeWindow extends BasicWindow {
 	}
 
 	/**
-	 * This method is used to set the exitListener 
+	 * This method is used to set the exitListener
+	 * 
 	 * @param exitListener
 	 */
 	public void setExitListener(SelectionListener exitListener) {
@@ -314,14 +338,16 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the exitListener
+	 * 
 	 * @return exitListener
 	 */
 	public SelectionListener getExitListener() {
 		return exitListener;
 	}
-	
+
 	/**
 	 * This method is used to get the saveListener
+	 * 
 	 * @return saveListener
 	 */
 	public SelectionListener getSaveListener() {
@@ -330,6 +356,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the saveListener
+	 * 
 	 * @param saveListener
 	 */
 	public void setSaveListener(SelectionListener saveListener) {
@@ -338,6 +365,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the loadListener
+	 * 
 	 * @return loadListener
 	 */
 	public SelectionListener getLoadListener() {
@@ -346,6 +374,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the loadListener
+	 * 
 	 * @param loadListener
 	 */
 	public void setLoadListener(SelectionListener loadListener) {
@@ -354,6 +383,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the propertiesListener
+	 * 
 	 * @return propertiesListener
 	 */
 	public SelectionListener getPropertiesListener() {
@@ -362,6 +392,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the propertiesListener
+	 * 
 	 * @param propertiesListener
 	 */
 	public void setPropertiesListener(SelectionListener propertiesListener) {
@@ -370,14 +401,16 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the keyListener
+	 * 
 	 * @return keyListener
 	 */
 	public KeyListener getKeyListener() {
 		return keyListener;
 	}
-	
+
 	/**
 	 * This method is used to set the keyListener
+	 * 
 	 * @param keyListener
 	 */
 	public void setKeyListener(KeyListener keyListener) {
@@ -386,6 +419,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to set the file
+	 * 
 	 * @param file
 	 */
 	public void setFile(String file) {
@@ -394,6 +428,7 @@ public class MazeWindow extends BasicWindow {
 
 	/**
 	 * This method is used to get the file
+	 * 
 	 * @return String
 	 */
 	public String getFile() {

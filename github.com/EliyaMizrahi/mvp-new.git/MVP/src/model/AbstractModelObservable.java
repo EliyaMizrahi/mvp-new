@@ -58,7 +58,7 @@ public abstract class AbstractModelObservable extends Observable implements Mode
 	public abstract Position getPositionFromHash(String nameMaze);
 
 	/**
-	 * This method is used to set the notifyObservers with messege and object
+	 * This method is used to set the notifyObservers with message and object
 	 * @param command
 	 * @param obj
 	 */

@@ -262,12 +262,12 @@ public class MyModelObservable extends AbstractModelObservable {
 							solution = algorithms.search(mazeSearchable);
 							break;
 
-						case "AirDistance":
+						case "Astar-AirDistance":
 							algorithms = new Astar<Position>(new MazeAirDistance());
 							solution = algorithms.search(mazeSearchable);
 							break;
 
-						case "ManhattanDistance":
+						case "Astar-ManhattanDistance":
 							algorithms = new Astar<Position>(new MazeManhattanDistance());
 							solution = algorithms.search(mazeSearchable);
 							break;

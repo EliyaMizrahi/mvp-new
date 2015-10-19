@@ -42,7 +42,7 @@ public class MessegeWindow extends BasicWindowGui {
 	public MessegeWindow(String title, int width, int height) {
 		super(title, width, height);
 		properties = new Properties();
-		properties.defaultProp();
+		//properties.defaultProp();
 
 	}
 
@@ -76,8 +76,8 @@ public class MessegeWindow extends BasicWindowGui {
 		new Label(shell, SWT.NONE).setText("Choose type solving algorithm:");
 		final Combo algo = new Combo(shell, SWT.DROP_DOWN | SWT.PUSH | SWT.BORDER);
 		algo.add("BFS");
-		algo.add("AStar - AirDistance");
-		algo.add("AStar - ManhattanDistance");
+		algo.add("Astar-AirDistance");
+		algo.add("Astar-ManhattanDistance");
 		algo.select(0);
 		
 		new Label(shell, SWT.NONE).setText("Choose axis:");
@@ -89,8 +89,8 @@ public class MessegeWindow extends BasicWindowGui {
 		
 		new Label(shell, SWT.NONE).setText("Choose view display:");
 		final Combo view = new Combo(shell, SWT.DROP_DOWN | SWT.PUSH | SWT.BORDER);
-		view.add("GUI");
-		view.add("CLI");
+		view.add("Gui");
+		view.add("Cli");
 		view.select(0);
 		
 		okButton = new Button(shell, SWT.PUSH);
